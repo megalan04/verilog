@@ -1,14 +1,18 @@
-module full_adder(input a,b,cin,output sum,cout);
-  assign sum =a^b^cin;
-  assign cout = (a&b)|(b&cin)|(a&cin);
-endmodule
-module RCA(input [3:0]a,b,
-  input cin, 
-  output [3:0]sum,
-  output cout);
-  wire c1,c2,c3;
-  full_adder fa0(a[0],b[0],cin,sum[0],c1);
-  full_adder fa1(a[1],b[1],c1,sum[1],c2);
-  full_adder fa2(a[2],b[2],c2,sum[2],c3);
-  full_adder fa3(a[3],b[3],c3,sum[3],cout);
+module test;
+  reg [3:0]a,b;
+  reg cin;
+  wire[3:0]sum;
+  wire cout;
+  RCA DUT(.*);
+  initial begin
+    a = 4'b0000; b = 4'b0000; cin = 0; #10;
+    a = 4'b0101; b = 4'b0011; cin = 0; #10;
+    a = 4'b1111; b = 4'b0001; cin = 0; #10;
+    a = 4'b1010; b = 4'b0101; cin = 1; #10;
+    a = 4'b1111; b = 4'b1111; cin = 1; #10;
+    #70 $finish;
+  end
+  initial begin
+    $monitor("time=%0t,a=%d, b=%d, cin=%d, sum=%b, cout=%b", $time,a,b,cin,sum,cout);
+  end
 endmodule
