@@ -2,7 +2,7 @@ module tb_bidirection_shiftregister;
   reg d0, d1, clk, rst;
   reg [1:0] sel;
   wire [3:0] q;
-  bidirection_shiftregister uut (.*);
+  bidirection_shiftregister dut (.*);
   initial begin
     clk=1;
   forever #5 clk = ~clk;
