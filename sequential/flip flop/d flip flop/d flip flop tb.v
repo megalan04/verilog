@@ -2,6 +2,7 @@ module tb;
 reg d;
 reg clk;
 reg rst;
+wire q;  
   d_flip_flop DUT(d,clk,rst,q);
   always #10 clk=~clk;
   initial begin
