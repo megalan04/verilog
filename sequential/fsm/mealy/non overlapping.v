@@ -47,7 +47,9 @@ module mealy(input clk,rst,d,
    always @(posedge clk or posedge rst)begin
     if(rst)
       dout<=0;
-    else
-      dout<=((state==S3)&&(d==1));
+     else if(state==S3)
+       dout<=1'b1;
+     else
+      dout<=1'b0;
    end
 endmodule
