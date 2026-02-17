@@ -37,7 +37,6 @@ module mealy(input clk,rst,d,
         end
          S3:begin
            if (d)begin
-                next_state=S1;
                 next_state=S0;
            end
               else 
