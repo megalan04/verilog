@@ -1,7 +1,6 @@
 module t_latch(
   input t,en,
-  output reg q=0
-);
+  output reg q=0);
   always@(*)begin
     if(en)begin
       if(t)
