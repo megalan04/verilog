@@ -29,8 +29,8 @@ module moore(input clk,rst,d,
    end
   always@(posedge clk or posedge rst)begin  
    if(state==S4)
-   dout=1'b1;
+   dout<=1'b1;
   else
-    dout=1'b0;
+    dout<=1'b0;
   end
 endmodule
