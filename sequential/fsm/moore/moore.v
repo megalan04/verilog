@@ -26,7 +26,10 @@ module moore(input clk,rst,d,
         default:next_state=S0;
       endcase
    end
- assign  dout=(state==S4);
+  always@(posedge clk or posedge rst)begin  
+    dout=(state==S4);
+  end
 endmodule
 
+  
   
