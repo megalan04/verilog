@@ -12,7 +12,7 @@ module jk_latch_tb();
     #50$finish;
   end
   initial begin
-     $monitor("T=%0t clk=%b j=%b k=%b q=%b",$time, clk, j, k, q);
+    $monitor("time=%0t clk=%b j=%b k=%b q=%b",$time, clk, j, k, q);
     $dumpfile("jk_latch.vcd");
     $dumpvars;
   end
