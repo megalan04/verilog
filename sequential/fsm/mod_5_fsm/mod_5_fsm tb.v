@@ -1,7 +1,7 @@
 module tb;
     reg clk;
     reg rst;
-    wire [2:0] q;
+    wire [2:0]q;
   mod_5_fsm DUT(.*);
   initial begin
     clk=0;
