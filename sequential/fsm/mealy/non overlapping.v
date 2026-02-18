@@ -40,7 +40,7 @@ module mealy(input clk,rst,d,
                 next_state=S0;
            end
               else 
-                next_state=S2;
+                next_state=S0;
          end
       endcase
   end
