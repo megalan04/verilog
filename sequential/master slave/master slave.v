@@ -15,9 +15,9 @@ endmodule
       
   module mas_sla(
   input d,clk,rst,
-  output reg qs
+  output reg qs,
+    output qm
 );
-  wire qm;
     d_latch master(
       .d(d),
       .clk(clk),
