@@ -55,4 +55,5 @@ initial begin
     $dumpfile("syn_fifo.vcd");
     $dumpvars;
   end
+endmodule
 
